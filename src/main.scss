@@ -1,0 +1,262 @@
+#jobplace {
+    .app-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+} 
+
+.add-project {
+    display: inline-block;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 40px 50px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+
+    svg {
+        font-size: 33px;
+        margin-bottom: 9px;
+    }
+
+    span {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+.add-project-modal, .add-list-form {
+    overflow: hidden;
+
+    input {
+        width: 99%;
+        border: 1px solid #eee;
+        padding: 8px 10px;
+        outline: none;
+    }
+
+    button {
+        border: 1px solid #000;
+        background: #000;
+        color: #fff;
+        padding: 10px;
+        border-radius: 3px;
+        text-align: right;
+        float: right;
+        margin: 20px 0 0;
+        cursor: pointer;
+    }
+}
+
+.project-wrap {
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+}
+
+.project-item {
+    flex-basis: 188px;
+    background: #000;
+    border-radius: 3px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    min-height: 106px;
+    text-decoration: none;
+    position: relative;
+
+    &:hover {
+        .actions {
+            opacity: 1;
+            visibility: visible;
+
+        }
+    }
+
+    svg {
+        font-size: 32px;
+
+        path {
+            fill: #000;
+
+        }
+    }
+
+    .action-icon {
+        position: relative;
+
+        svg {
+            font-size: 32px;
+            transform: rotate(90deg);
+    
+            path {
+                fill: #ffffff;
+    
+            }
+        }
+
+        &:hover {
+            .action-list {
+                opacity: 1;
+                visibility: visible;
+
+            }
+        }
+    }
+
+    .actions {
+        position: absolute;
+        right: 10px;
+        bottom: 12px;
+        opacity: 0;
+        visibility: hidden;
+
+    }
+
+    .action-list {
+        position: absolute;
+        right: 6px;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        width: 50px;
+        background: #ffffff;
+        text-align: right;
+        padding: 10px;
+        z-index: 1;
+        
+        svg {
+            transform: rotate(0deg);
+
+            path {
+                fill: #000000;
+    
+            }
+        }
+
+    }
+
+    h3 {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        line-height: 27px;
+    }
+}
+
+.dashboard > div {
+    display: inline-flex;
+    gap: 8px;
+
+}
+
+.ant-layout {
+    background: transparent;
+}
+
+.project-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a {
+        color: #000;;
+        padding: 3px 7px;
+
+        &:hover {
+            background: #dadada
+
+        }
+
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        
+        svg {
+            opacity: 0;
+            visibility: hidden;
+
+        }
+
+        &:hover {
+            svg {
+                opacity: 1;
+                visibility: visible;
+                
+            }
+            
+        }
+    }
+
+    
+}
+
+.add-list {
+    text-align: right;
+    padding-right: 21px;
+    margin-bottom: 50px;
+
+    span {
+        background: #fff;
+        padding: 14px 20px;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+
+    }
+}
+
+.dashboard {
+    .card[class] {
+        padding: 0 !important;
+        border-radius: 5px;
+
+        p {
+            padding: 7px 12px;
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h5 {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin: 0;
+            padding: 13px 10px;
+            font-size: 15px;
+            font-weight: 400;
+            color: #707983;
+            cursor: pointer;
+            line-height: 100%;
+            border-top: 1px solid #ddd;
+
+        }
+    }
+
+    .listCardWrapper {
+        padding: 14px 10px 10px;
+
+        .listCardItem {
+            background: #e1e5eb;
+            padding: 8px 10px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 400;
+
+        }
+    }
+
+}
