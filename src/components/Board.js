@@ -5,34 +5,49 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCard } from '../actions';
 import AddList from './AddList';
+import CardModal from './CardModal';
 
 const Dashboard = () => {
     const lists = useSelector((state) => state.listReducer.lists);
     const cards = useSelector((state) => state.cardReducer.cards);
-    const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+    const [isCardFormModalOpen, setIsCardFormModalOpen] = useState(false);
     const [inputCardVlue, setInputCardValue] = useState('');
+    const [isCardModal, setIsCardModal] = useState(false)
     const dispatch = useDispatch();
 
     const myRef = useRef(null)
 
-    const showCardModal = () => {
-        setIsCardModalOpen(true);
+    const cardModalOpen = () => {
+        setIsCardModal(true)
+    }
+
+    const cardModalOk = () => {
+        setIsCardModal(false)
+    }
+
+    const cardModalCancel = () => {
+        setIsCardModal(false)
+    }
+
+
+    const showCardModalForm = () => {
+        setIsCardFormModalOpen(true);
     };
 
     const handleCardOk = () => {
-        setIsCardModalOpen(false);
+        setIsCardFormModalOpen(false);
        
     };
 
     const handleCardCancel = () => {
-        setIsCardModalOpen(false);
+        setIsCardFormModalOpen(false);
     };
 
     const handleAddCards = (event) => {
         if ( inputCardVlue.trim() !== '' ) {
             dispatch(addCard(inputCardVlue))
             setInputCardValue('')
-            setIsCardModalOpen(false);
+            setIsCardFormModalOpen(false);
 
             
         }
@@ -156,7 +171,7 @@ const Dashboard = () => {
                                         {...droppableProps}
                                         ref={innerRef} 
                                     >
-                                        <div className='test'>
+                                        <div className='card-list'>
                                             {cards.map((card, index) => {
                                                 return(
                                                     <Draggable 
@@ -172,11 +187,24 @@ const Dashboard = () => {
                                                                 key={card.id}
                                                             >
                                                                 <div 
-                                                                    className='listCardItem' 
+                                                                    className='listCardItem'
+                                                                    onClick={cardModalOpen}
                                                                     
                                                                 >
                                                                     {card.data}
                                                                 </div>
+
+                                                                <Modal 
+                                                                    footer={null} 
+                                                                    title="" 
+                                                                    open={isCardModal} 
+                                                                    onOk={cardModalOk} 
+                                                                    onCancel={cardModalCancel}
+                                                                    width={800}
+                                                                >
+                                                                    <CardModal />
+                                                                </Modal>
+                                                                
 
                                                             </div>
                                                         )}
@@ -237,12 +265,12 @@ const Dashboard = () => {
                                                                 <CardList droppableId={list.id} />
                                                             </div>
 
-                                                            <h5 ref={myRef} id={`id:${list.id}`} onClick={showCardModal}><AiOutlinePlus />Add card</h5>
+                                                            <h5 ref={myRef} id={`id:${list.id}`} onClick={showCardModalForm}><AiOutlinePlus />Add card</h5>
 
                                                             <Modal 
                                                                 footer={null} 
                                                                 title="Add Card" 
-                                                                open={isCardModalOpen} 
+                                                                open={isCardFormModalOpen} 
                                                                 onOk={handleCardOk} 
                                                                 onCancel={handleCardCancel}
                                                             >

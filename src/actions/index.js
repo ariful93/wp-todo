@@ -43,3 +43,23 @@ export const addCard = (data) => {
         }
     }
 }
+
+export const addSubTask = (data) => {
+    return {
+        type: 'ADD_SUB_TASK',
+        payload: {
+            id: new Date().getTime().toString(),
+            data:data
+        }
+    }
+}
+
+export const addTaskDesc = (data) => {
+    return {
+        type: 'ADD_SUB_DESC',
+        payload: {
+            id: new Date().getTime().toString(),
+            data:data
+        }
+    }
+}

@@ -207,6 +207,117 @@
   border-radius: 4px;
   font-size: 14px;
   font-weight: 400;
+  cursor: pointer;
+}
+
+.cardModalWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.cardModalWrapper .cardModal-inner {
+  flex-basis: 70%;
+}
+.cardModalWrapper .cardModal-inner h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cardModalWrapper .cardModal-inner input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #eee;
+  background: #eee;
+  margin-bottom: 10px;
+}
+.cardModalWrapper .cardModal-inner .add-btn {
+  background: #eee;
+  border: 0;
+  border-radius: 5px;
+  padding: 20px 10px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+.cardModalWrapper .cardModal-inner .save-btn, .cardModalWrapper .cardModal-inner .cancle-btn {
+  border: 0;
+  color: #fff;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cardModalWrapper .cardModal-inner .save-btn {
+  background: #0db70d;
+}
+.cardModalWrapper .cardModal-inner .cancle-btn {
+  background: #e13838;
+}
+.cardModalWrapper .cardModal-inner .sub-tasks {
+  margin-bottom: 20px;
+}
+.cardModalWrapper .cardModal-inner .sub-tasks .sub-task {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.cardModalWrapper .cardModal-inner .sub-tasks .sub-task input {
+  width: 17px !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+  box-shadow: inherit !important;
+}
+.cardModalWrapper .cardModal-inner .sub-tasks .sub-task .task-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4d5a6c;
+  margin-left: 4px;
+}
+.cardModalWrapper .cardModal-inner .sub-tasks .sub-task .task-name.active {
+  text-decoration: line-through;
+  color: #939393;
+}
+.cardModalWrapper .cardModal-inner .sub-tasks .task-progress {
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 0.28571429rem;
+  box-shadow: none;
+  display: block;
+  margin: 1em 0 2.5em;
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+}
+.cardModalWrapper .cardModal-inner .sub-tasks .task-progress .progress_bar {
+  background: #2185d0;
+  border-radius: 0.28571429rem;
+  display: block;
+  line-height: 1;
+  position: relative;
+  transition: width 0.1s ease, background-color 0.1s ease;
+  width: 0;
+  height: 8px;
+}
+.cardModalWrapper .sidebar {
+  flex-basis: 180px;
+}
+.cardModalWrapper .sidebar h4 {
+  margin-bottom: 10px;
+}
+.cardModalWrapper .sidebar .card-modal-action {
+  font-size: 14px;
+  font-weight: 700;
+  background: #ddd;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.cardModalWrapper .sidebar .card-modal-action svg {
+  margin-right: 7px;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=index.css.map*/
